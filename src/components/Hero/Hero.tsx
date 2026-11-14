@@ -22,7 +22,7 @@ export default function Hero() {
         <TypingTitle />
         <p className="hero-description">I design digital experiences that make complex things feel simple. My focus is on clear user journeys, thoughtful interfaces, and the small details that make a product feel right. I bring curiosity and a hands-on approach to turning ideas into experiences people enjoy using.</p>
         <div className="hero-actions">
-          <BtnSecondary href="#experience">Resume</BtnSecondary>
+          <BtnSecondary href="https://docs.google.com/document/d/13gpti0HT-YP3LQ5J-_aJOsaeQ0l2EpN8/edit?usp=sharing&ouid=106588430735065196379&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">Resume</BtnSecondary>
           <BtnPrimary href="#contact">Get in touch</BtnPrimary>
         </div>
       </div>

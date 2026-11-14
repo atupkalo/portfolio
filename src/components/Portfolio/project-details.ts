@@ -1,0 +1,18 @@
+export const projectDetails = [
+  {
+    caseStudy: "https://www.behance.net/gallery/230411639/SAMS-%28State-Aid-Manegment-System?platform=direct",
+    description: "SAMS is a mission-critical enterprise platform built for the New York State Education Department, facilitating financial communication between school districts and state aid administrators. Processing roughly $30 billion annually across six complex modules, including claim collection review, transportation, building projects, and payment modeling, the system serves over 3,000 internal users. The primary UX challenge was streamlining massive, data-heavy workflows and eliminating administrative bottlenecks across disparate financial operations. By unifying complex regulatory data into intuitive, structured interfaces, the design empowers state and district officials to track funding accurately, model budgets efficiently, and reduce costly processing errors across high-stakes educational allocations.",
+  },
+  {
+    caseStudy: null,
+    description: "EnContexti is an EdTech startup platform designed to help Ukrainian speakers master English independently or supplement their formal courses and private lessons. Many self-paced learners struggle with fragmented resources, unnatural textbook phrasing, and a rapid drop in motivation. The UX strategy centered on building a holistic, engaging learning environment grounded in authentic, real-world materials. By structuring every core aspect of language acquisition, including grammar, vocabulary, listening, and comprehension, into clear, interactive modules with built-in progress tracking, the platform removes guesswork from self-study. It guides learners step-by-step through practical content, helping them visualize their milestones and stay consistently motivated.",
+  },
+  {
+    caseStudy: "https://www.behance.net/gallery/185073185/Mobile-application?platform=direct",
+    description: "Tutor Hub is a dedicated teaching workspace created for Green Forest, a private foreign language education center in Ukraine. Tutors previously faced fragmented workflows, juggling external calendars to track schedules while spending hours scouring the internet for suitable teaching materials. The UX goal was to centralize lesson delivery and preparation into one seamless platform. By integrating dynamic schedule tracking with a curated, easily searchable library of educational resources, Tutor Hub eliminates repetitive preparation work. This user-centered solution empowers educators to conduct live lessons smoothly and craft tailored curricula in a fraction of the time, allowing them to focus on student engagement.",
+  },
+  {
+    caseStudy: "https://www.behance.net/gallery/230411639/SAMS-%28State-Aid-Manegment-System?platform=direct",
+    description: "Designed for a multi-location hair salon chain, this comprehensive platform integrates client appointment scheduling with internal staff management and operational analytics. Before this system, salon managers and stylists struggled with fragmented booking tools, scheduling conflicts, and poor visibility into daily client traffic. My UX focus was to unify front-of-house booking with back-of-house business flows into a single, cohesive ecosystem. By mapping out end-to-end user journeys for both receptionists and stylists, the interface simplifies real-time calendar adjustments, optimizes staff allocation, and surfaces actionable insights into client flow, ultimately reducing administrative friction and elevating the overall customer service.",
+  },
+];

@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import "./Portfolio.css";
+import ProjectDetails from "./ProjectDetails";
+import { projectDetails } from "./project-details";
 import Section from "../Section/Section";
 import BtnSecondary from "../ui/BtnSecondary/BtnSecondary";
 
@@ -35,6 +37,8 @@ const projects = [
 
 export default function Portfolio() {
   const track = useRef<HTMLDivElement>(null);
+  const [detailsTrigger, setDetailsTrigger] = useState<HTMLButtonElement | null>(null);
+  const [activeProject, setActiveProject] = useState<number | null>(null);
   const [visible, setVisible] = useState<number[]>([]);
 
   useEffect(() => {
@@ -61,6 +65,7 @@ export default function Portfolio() {
   }, []);
 
   function showProject(index: number) {
+    setActiveProject(null);
     const element = track.current;
     const card = element?.querySelector<HTMLElement>(".card");
     if (!element || !card) return;
@@ -69,6 +74,7 @@ export default function Portfolio() {
   }
 
   function move(direction: number) {
+    setActiveProject(null);
     const element = track.current;
     if (!element) return;
     const card = element.querySelector<HTMLElement>(".card");
@@ -106,13 +112,14 @@ export default function Portfolio() {
                 {project.year && <p className="project-year">{project.year}</p>}
                 <p className="project-description">{project.description}</p>
                 <div className="project-actions">
-                  <BtnSecondary className="project-details-button" aria-label={`Details about ${project.title}`}>Details</BtnSecondary>
+                  <BtnSecondary onClick={event => { setDetailsTrigger(event.currentTarget); setActiveProject(activeProject === index ? null : index); }} aria-expanded={activeProject === index} aria-controls={activeProject === index ? "project-popover" : undefined} aria-haspopup="dialog" className="project-details-button" aria-label={`Details about ${project.title}`}>Details</BtnSecondary>
                 </div>
               </div>
             </div>
           ))}
         </div>
       </div>
+      {activeProject !== null && <ProjectDetails key={activeProject} trigger={detailsTrigger!} title={projects[activeProject].title} {...projectDetails[activeProject]} onClose={() => setActiveProject(null)} />}
     </Section>
   );
 }
