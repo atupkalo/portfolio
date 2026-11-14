@@ -1,0 +1,33 @@
+.section-intro {
+  overflow: clip;
+}
+
+.section-intro > .section-heading,
+.section-intro > .section-subtitle {
+  opacity: 0;
+  transition: opacity 700ms ease-out, transform 700ms ease-out;
+}
+
+.section-intro > .section-heading {
+  transform: translateX(-48px);
+}
+
+.section-intro > .section-subtitle {
+  transform: translateX(48px);
+  transition-delay: 120ms;
+}
+
+.section-intro.is-revealed > .section-heading,
+.section-intro.is-revealed > .section-subtitle {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-intro > .section-heading,
+  .section-intro > .section-subtitle {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

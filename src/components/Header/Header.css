@@ -1,0 +1,33 @@
+.p-header{
+    padding: 16px 32px;
+    gap: 60px;
+}
+
+.main-navigation{
+   gap: 32px;
+}
+.nav-link{
+    padding: 8px 24px;
+    border-radius: 999px;
+}
+.nav-link:hover{
+    background: var(--layer1);
+    color: var(--primary)
+}
+
+.main-navigation a {
+  font-family: var(--font-roboto-condensed), sans-serif;
+  font-weight: 400;
+}
+
+@media (width < 920px) {
+  .desktop-navigation { display: none; }
+  .p-header { gap: 24px; padding: 16px 20px; }
+}
+
+/* Keep the desktop links within the container at the switch point. */
+.main-navigation { gap: clamp(8px, 2vw, 32px); }
+.p-header { gap: 24px; }
+.nav-link { padding-inline: clamp(12px, 1.6vw, 24px); }
+@media (width < 768px) { .p-header { padding: 14px 16px; } }
+@media (width < 480px) { .p-header { padding: 12px; } }

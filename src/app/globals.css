@@ -1,26 +1,91 @@
-@import "tailwindcss";
-
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #2F3037;
+  --layer1: #3B3C45;
+  --layer2: #464853;
+  --primary: #00FAE1;
+  --secondary: #E76F6F;
+  --accent: var(--secondary);
+  --border: #C0C0C0;
+  --text: #ffffff;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
+body{
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  font-family: var(--font-lato), sans-serif;
+  font-weight: 300;
+}
+.main{
+  width: min(1340px, calc(100% - 40px));
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 72px;
+}
+.f-row-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.f-row-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.f-row-between{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+.glass, .glass-clickble{
+ transform: .4s;
+    box-shadow:
+   inset 0 3px 10px rgba(91, 99, 102, 0.45);
+background: rgba(62, 64, 66, 0.5);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(91, 99, 102, 0.9);
+}
+.glass-clickble:hover{
+  background: var(--background)!important;
+  box-shadow: 0 0 20px rgba(91, 99, 102, 0.45);
+}
+
+.section-heading{
+  font-family: var(--font-titillium-web), sans-serif;
+  font-weight: 600;
+  font-size: 4rem;
+  color: var(--text);
+  text-align: center;
+}
+.section-subtitle{
+  padding-top: 16px;
+  font-family: var(--font-lato), sans-serif;
+  font-weight: 300;
+  font-size: 2rem;
+  color: var(--primary);
+  text-align: center;
+  text-transform: uppercase;
+}
+/* Shared responsive layout. */
+.main > section { width: 100%; min-width: 0; }
+@media (width < 920px) {
+  .main { width: calc(100% - 40px); gap: 72px; }
+  .section-heading { font-size: 3rem; line-height: 1.2; }
+  .section-subtitle { font-size: 1.5rem; line-height: 1.4; }
+}
+@media (width < 768px) {
+  .main { width: calc(100% - 32px); gap: 72px; }
+  .section-heading { font-size: 2.5rem; }
+  .section-subtitle { font-size: 1.25rem; }
+}
+@media (width < 480px) {
+  .main { width: calc(100% - 24px); gap: 72px; }
+  .section-heading { font-size: 2rem; }
+  .section-subtitle { font-size: 1.125rem; }
 }

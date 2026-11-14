@@ -1,0 +1,68 @@
+.btn-primary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 68px;
+  padding: 18px 40px;
+  border: 1px solid var(--secondary);
+  border-radius: 999px;
+  background: var(--secondary);
+  color: var(--text);
+  font-family: var(--font-roboto-condensed), sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 200ms ease;
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.btn-primary:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 5px;
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-primary { transition: none; }
+  .btn-primary:hover:not(:disabled) { transform: none; }
+}
+
+.btn-primary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(110deg, transparent 38%, rgba(255, 255, 255, 0.5) 49%, transparent 60%);
+  background-size: 300% 100%;
+  background-position: 100% 0;
+  opacity: 0;
+}
+
+.btn-primary:hover:not(:disabled)::after {
+  animation: btn-primary-glare 350ms ease-out 1 both;
+}
+
+@keyframes btn-primary-glare {
+  0% { background-position: 100% 0; opacity: 0; }
+  15%, 80% { opacity: 1; }
+  100% { background-position: 0% 0; opacity: 0; }
+}
+
+.btn-primary:disabled::after { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-primary::after, .btn-primary:hover:not(:disabled)::after { animation: none; display: none; }
+}

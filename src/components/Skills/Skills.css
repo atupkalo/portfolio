@@ -1,0 +1,83 @@
+.skills-groups {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 100%;
+  gap: 48px;
+  margin: 36px 0 64px;
+}
+.skill-group { min-width: 0; }
+.skill-group .section-subtitle { margin: 0 0 32px; }
+.ux-skill-list { display: grid; gap: 22px; }
+.skill-label { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 9px; font-size: 16px; }
+.skill-label span:last-child, .tool-score { color: #fff; font-variant-numeric: tabular-nums; }
+.skill-track { height: 10px; overflow: hidden; border-radius: 999px; background: var(--layer2); }
+.skill-fill { width: 100%; height: 100%; background: var(--accent); border-radius: inherit; transform: scaleX(0); transform-origin: left; transition: transform 1100ms ease-out; }
+.is-visible .skill-fill { transform: scaleX(var(--score)); }
+.coding-skills { display: grid; width: 100%; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px 20px; }
+.coding-skill { text-align: center; }
+.skill-donut { position: relative; max-width: 150px; margin: 0 auto; }
+.skill-donut svg { display: block; width: 100%; transform: rotate(-90deg); }
+.skill-ring-track, .skill-ring-fill { fill: none; stroke-width: 9; }
+.skill-ring-track { stroke: var(--layer2); }
+.skill-ring-fill { stroke: var(--accent); stroke-linecap: round; stroke-dasharray: 100; stroke-dashoffset: 100; transition: stroke-dashoffset 1300ms ease-out; }
+.is-visible .skill-ring-fill { stroke-dashoffset: var(--ring-offset); }
+.skill-donut span { position: absolute; inset: 0; display: grid; place-items: center; font-size: 24px; font-variant-numeric: tabular-nums; }
+.coding-skill p { margin: 12px 0 0; font-size: 17px; }
+.tool-chart { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.tool-skill { display: grid; align-content: start; grid-template-rows: max-content 240px max-content; gap: 12px; text-align: center; }
+.tool-track { width: 100%; max-width: 56px; margin: 0 auto; overflow: hidden; border-radius: 10px 10px 0 0; background: var(--layer2); }
+.tool-fill { width: 100%; height: 100%; background: var(--accent); transform: scaleY(0); transform-origin: bottom; transition: transform 1300ms ease-out; }
+.is-visible .tool-fill { transform: scaleY(var(--score)); }
+.tool-skill p { margin: 0; font-size: 20px; line-height: 1.4; overflow-wrap: anywhere; }
+@media (width < 920px) {
+  .skills-groups { gap: 40px; }
+}
+@media (width < 768px) {
+  .skills-groups { grid-template-columns: 1fr; }
+  .coding-skills { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 14px; }
+  .skill-donut span { font-size: 20px; }
+  .tool-chart { gap: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .skill-fill, .tool-fill, .skill-ring-fill { transition: none; }
+  .skill-fill { transform: scaleX(var(--score)); }
+  .tool-fill { transform: scaleY(var(--score)); }
+  .skill-ring-fill { stroke-dashoffset: var(--ring-offset); }
+}
+
+.skill-donut span { color: #fff; }
+
+.skill-label span:first-child, .coding-skill p, .tool-skill p { font-size: 16px; font-weight: 400; }
+
+.skill-circle { position: relative; width: 100%; max-width: 150px; aspect-ratio: 1; margin: 0 auto; border-radius: 50%; overflow: hidden; background: var(--layer2); }
+@property --circle-progress {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+.skill-circle-fill { position: absolute; inset: 0; background: conic-gradient(from 0deg, var(--accent) 0% var(--circle-progress), var(--layer2) var(--circle-progress) 100%); transition: --circle-progress 1300ms ease-out; }
+.is-visible .skill-circle-fill { --circle-progress: calc(var(--score) * 100%); }
+.skill-circle span { position: absolute; inset: 0; display: grid; place-items: center; color: #fff; font-size: 24px; font-variant-numeric: tabular-nums; }
+@media (width < 768px) { .skill-circle span { font-size: 20px; } }
+@media (prefers-reduced-motion: reduce) { .skill-circle-fill { transition: none; --circle-progress: calc(var(--score) * 100%); } }
+
+
+@media (width < 920px) {
+  .skills-groups { gap: 40px 28px; margin: 28px 0 0; }
+  .coding-skills { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 16px; }
+  .skill-donut, .skill-circle { max-width: 130px; }
+  .tool-skill { grid-template-rows: max-content 200px max-content; }
+  .skill-group .section-subtitle { margin-bottom: 24px; }
+}
+@media (width < 768px) {
+  .skills-groups { grid-template-columns: 1fr; gap: 44px; }
+  .coding-skills { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .tool-chart { max-width: 540px; width: 100%; margin-inline: auto; }
+}
+@media (width < 480px) {
+  .coding-skills { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tool-skill { grid-template-rows: max-content 180px max-content; }
+  .tool-track { max-width: 48px; }
+  .tool-chart { gap: 12px; }
+  .skill-label { gap: 8px; }
+}

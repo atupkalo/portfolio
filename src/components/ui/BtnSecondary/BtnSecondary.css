@@ -1,0 +1,74 @@
+.btn-secondary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 68px;
+  padding: 18px 40px;
+  border: 1px solid var(--primary);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--primary);
+  font-family: var(--font-roboto-condensed), sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 3px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 200ms ease;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.btn-secondary:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 5px;
+}
+
+.btn-secondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-secondary { transition: none; }
+  .btn-secondary:hover:not(:disabled) { transform: none; }
+}
+
+.btn-secondary::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(110deg, transparent 35%, #fff 46%, #fff 54%, transparent 65%);
+  background-size: 300% 100%;
+  background-position: 100% 0;
+  padding: 2px;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+}
+
+.btn-secondary:hover:not(:disabled)::after {
+  animation: btn-secondary-glare 350ms ease-out 1 both;
+}
+
+@keyframes btn-secondary-glare {
+  0% { background-position: 100% 0; opacity: 0; }
+  15%, 80% { opacity: 1; }
+  100% { background-position: 0% 0; opacity: 0; }
+}
+
+.btn-secondary:disabled::after { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-secondary::after, .btn-secondary:hover:not(:disabled)::after { animation: none; display: none; }
+}

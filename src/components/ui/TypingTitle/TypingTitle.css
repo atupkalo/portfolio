@@ -1,0 +1,29 @@
+.typing-title {
+  display: grid;
+}
+
+.typing-title-sizer,
+.typing-title-text {
+  grid-area: 1 / 1;
+}
+
+.typing-title-sizer {
+  visibility: hidden;
+  padding-inline: 0.15em;
+}
+
+.typing-title-cursor {
+  display: inline-block;
+  width: 0;
+  color: var(--primary);
+  font-weight: 300;
+  animation: typing-cursor-blink 800ms step-end infinite;
+}
+
+@keyframes typing-cursor-blink {
+  50% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .typing-title-cursor { animation: none; display: none; }
+}

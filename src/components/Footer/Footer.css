@@ -1,0 +1,58 @@
+.site-footer {
+  width: min(1340px, calc(100% - 40px));
+  margin: 40px auto 64px;
+  padding: 24px 60px 30px;
+  border-radius: 32px;
+  background: #252729;
+  text-align: center;
+  color: #8f9298;
+}
+.footer-up {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 42px;
+  padding: 8px 16px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  text-transform: uppercase;
+  font-family: var(--font-roboto-condensed), sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+}
+.footer-navigation { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 20px; margin-top: 26px; }
+.footer-navigation a { font-size: 14px; text-decoration: underline; text-underline-offset: 3px; }
+.footer-divider { height: 1px; margin: 28px 0 20px; background: rgba(192, 192, 192, 0.3); }
+.footer-socials { display: flex; justify-content: center; flex-wrap: nowrap; gap: 4px; }
+.footer-socials a, .footer-socials button { display: grid; place-items: center; width: 48px; height: 48px; padding: 0; border: 0; background: transparent; color: inherit; }
+.footer-socials button:disabled { cursor: pointer; }
+.footer-copyright { margin: 26px 0 0; font-size: 13px; }
+.site-footer a:hover, .footer-socials button:hover { color: #fff; }
+.site-footer a:focus-visible { outline: 2px solid var(--primary); outline-offset: 5px; }
+@media (width < 768px) {
+  .site-footer { padding: 24px 20px 28px; margin-bottom: 24px; border-radius: 26px; }
+  .footer-navigation { gap: 14px 18px; }
+}
+
+.footer-social-icon { display: block; width: 32px; height: 32px; background: currentColor; mask-size: contain; mask-position: center; mask-repeat: no-repeat; -webkit-mask-size: contain; -webkit-mask-position: center; -webkit-mask-repeat: no-repeat; }
+
+.site-footer a, .footer-socials button { transition: color 150ms ease; }
+@media (prefers-reduced-motion: reduce) { .site-footer a, .footer-socials button { transition: none; } }
+
+.footer-socials a, .footer-socials button { cursor: pointer; }
+
+@media (width < 920px) { .site-footer { margin-top: 64px; padding-inline: 32px; } }
+@media (width < 768px) {
+  .site-footer { width: calc(100% - 32px); padding-inline: 24px; margin-top: 48px; }
+  .footer-navigation a { display: inline-flex; align-items: center; min-height: 44px; }
+}
+@media (width < 480px) {
+  .site-footer { width: calc(100% - 24px); padding: 24px 16px; margin-top: 40px; }
+  .footer-navigation { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 16px; }
+  .footer-navigation a { justify-content: center; }
+  .footer-socials { gap: 2px; }
+  .footer-socials a, .footer-socials button { width: 40px; min-width: 32px; flex-shrink: 1; }
+  .footer-copyright { line-height: 1.6; }
+}
