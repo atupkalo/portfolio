@@ -11,24 +11,28 @@ import BtnSecondary from "../ui/BtnSecondary/BtnSecondary";
 const projects = [
   {
     title: "SAMS - State Aid Management System",
+    image: "/img/SAMS.jpg",
     description: "A large-scale enterprise software platform for internal state aid management.",
     type: "B2B / EdTech / FinTech",
     year: "2025 - Present",
   },
   {
     title: "EnContexti - English Learning Platform",
+    image: "/img/encontexti.jpg",
     description: "An educational platform for people learning English as a second language.",
     type: "B2C / EdTech",
     year: "2025 - 2026",
   },
   {
     title: "TutorHub - Educational Resource Library for Freelance Teachers",
+    image: "/img/tutor-hub.jpg",
     description: "An educational platform that helps independent teachers conduct lessons, manage schedules, and access a shared hub of teaching materials.",
     type: "B2B / EdTech",
     year: "2023 - 2025",
   },
   {
     title: "Caesar's Scissors - Hair Salon Scheduling and Management System",
+    image: "/img/hair-salon.jpg",
     description: "An application for hair salons to manage appointments, coordinate staff, and streamline day-to-day business operations.",
     type: "B2B / Commercial",
     year: "2024 - 2024",
@@ -105,7 +109,7 @@ export default function Portfolio() {
         <div id="portfolio-track" className="portfolio-track" ref={track} tabIndex={0} aria-label="Project cards, scroll horizontally to explore">
           {projects.map((project, index) => (
             <div className="card glass" key={project.title} role="group" aria-roledescription="slide" aria-label={`${index + 1} of ${projects.length}: ${project.title}`}>
-              <Image className="project-image" src="/project-placeholder.svg" alt="Project image placeholder" width={720} height={480} sizes="(max-width: 767px) 90vw, 45vw" />
+              <Image className="project-image" src={project.image} alt={`${project.title} mockup`} width={720} height={480} sizes="(max-width: 767px) 90vw, 45vw" />
               <div className="project-content">
                 <h3>{project.title}</h3>
                 <p className="project-type">{project.type}</p>

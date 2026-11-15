@@ -11,14 +11,13 @@ const sections = [
   ["contact", "Get in touch"],
 ] as const;
 
-// Add profile URLs here when available. Unconnected slots stay disabled.
 const socialLinks: { label: string; icon: string; href: string | null }[] = [
-  { label: "LinkedIn", icon: "linkedin-01-stroke-rounded.svg", href: null },
-  { label: "Behance", icon: "behance-02-stroke-rounded.svg", href: null },
-  { label: "Dribbble", icon: "dribbble-stroke-rounded.svg", href: null },
-  { label: "GitHub", icon: "github-01-stroke-rounded.svg", href: null },
-  { label: "Facebook", icon: "facebook-01-stroke-rounded.svg", href: null },
-  { label: "Pinterest", icon: "pinterest-stroke-rounded.svg", href: null },
+  { label: "LinkedIn", icon: "linkedin-01-stroke-rounded.svg", href: "https://www.linkedin.com/in/anatolii-tupkalo/" },
+  { label: "Behance", icon: "behance-02-stroke-rounded.svg", href: "https://www.behance.net/atupkalodenver" },
+  { label: "Dribbble", icon: "dribbble-stroke-rounded.svg", href: "https://dribbble.com/Tupkalo" },
+  { label: "GitHub", icon: "github-01-stroke-rounded.svg", href: "https://github.com/atupkalo" },
+  { label: "Facebook", icon: "facebook-01-stroke-rounded.svg", href: "https://www.facebook.com/anatoliy.orehov" },
+  { label: "Pinterest", icon: "pinterest-stroke-rounded.svg", href: "https://www.pinterest.com/anatoliitupkalo/_profile/" },
 ];
 
 function SocialIcon({ icon }: { icon: string }) {

@@ -82,3 +82,7 @@
   .contact-field label { left: 18px; }
   .contact-form .contact-submit { min-width: 160px; }
 }
+
+.contact-honeypot { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+.contact-demo-note { margin: 0 0 28px; font-size: 14px; line-height: 1.5; text-align: center; color: var(--border); }

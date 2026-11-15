@@ -5,10 +5,12 @@ import "./Education.css";
 import Section from "../Section/Section";
 
 const education = [
-  { icon: "school.svg", label: "School", description: "[School or institution]", qualification: "[Program or qualification]" },
-  { icon: "school.svg", label: "School", description: "[School or institution]", qualification: "[Program or qualification]" },
-  { icon: "colledge.svg", label: "College", description: "[College or university]", qualification: "[Degree or qualification]" },
-  { icon: "colledge.svg", label: "College", description: "[College or university]", qualification: "[Degree or qualification]" },
+  { icon: "colledge.svg", label: "University", dates: "08/1997 - 06/2001", description: "Poltav'skij Nacional'nij Tehnicnij Universytet imeni Yuriya Kundratiuka", qualification: "Bachelor’s degree" },
+  { icon: "school.svg", label: "School", dates: "02/2015 - 09/2015", description: "LoftSchool", qualification: "Front-End Development - Beginner" },
+  { icon: "school.svg", label: "School", dates: "11/2015 - 05/2016", description: "LoftSchool", qualification: "Front-End Development - Advanced" },
+  { icon: "school.svg", label: "School", dates: "03/2016 - 06/2016", description: "LoftSchool", qualification: "PHP" },
+  { icon: "colledge.svg", label: "University", dates: "08/2016 - 05/2017", description: "University of Denver", qualification: "Product Design" },
+  { icon: "school.svg", label: "School", dates: "09/2023 - 02/2024", description: "Design Lab", qualification: "UX/UI Design" },
 ];
 
 export default function Education() {
@@ -55,10 +57,10 @@ export default function Education() {
         <ol id="education-track" className="education-stops" ref={track} tabIndex={0} aria-label="Education timeline, scroll horizontally">
           {education.map((item, index) => (
             <li className="education-stop" key={index}>
-              <span className="education-date glass">[Start year - End year]</span>
+              <span className="education-date glass">{item.dates}</span>
               <div className="education-circle glass">
                 <span className="education-icon" role="img" aria-label={item.label} style={{ maskImage: `url(/svg/${item.icon})`, WebkitMaskImage: `url(/svg/${item.icon})` }} />
-                <p>{item.description}<br />{item.qualification}</p>
+                <p>{item.description}<br /><span className="education-qualification">{item.qualification}</span></p>
               </div>
             </li>
           ))}

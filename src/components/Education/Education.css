@@ -61,3 +61,13 @@
   .education-indicators button { width: 28px; height: 44px; }
   .education-arrow { flex-shrink: 0; }
 }
+
+/* Keep all six timeline controls within narrow screens. */
+@media (width < 480px) {
+  .education-slider-controls { display: grid; grid-template-columns: 44px minmax(0, 1fr) 44px; }
+  .education-arrow { width: 44px; height: 44px; }
+  .education-indicators { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 2px; }
+  .education-indicators button { width: 100%; }
+}
+
+.education-qualification { color: var(--primary); }
