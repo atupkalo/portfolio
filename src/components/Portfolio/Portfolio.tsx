@@ -6,6 +6,7 @@ import "./Portfolio.css";
 import ProjectDetails from "./ProjectDetails";
 import { projectDetails } from "./project-details";
 import Section from "../Section/Section";
+import BtnPrimary from "../ui/BtnPrimary/BtnPrimary";
 import BtnSecondary from "../ui/BtnSecondary/BtnSecondary";
 
 const projects = [
@@ -122,6 +123,11 @@ export default function Portfolio() {
             </div>
           ))}
         </div>
+      </div>
+      <div className="portfolio-more-work">
+        <BtnPrimary href="https://www.behance.net/atupkalodenver" target="_blank" rel="noopener noreferrer">
+          More of my work
+        </BtnPrimary>
       </div>
       {activeProject !== null && <ProjectDetails key={activeProject} trigger={detailsTrigger!} title={projects[activeProject].title} {...projectDetails[activeProject]} onClose={() => setActiveProject(null)} />}
     </Section>
