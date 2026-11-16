@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     title: portfolioTitle,
     description: portfolioDescription,
     images: [{
-      url: "/img/me.jpg",
+      url: "https://portfolio-fawn-beta-44.vercel.app/img/me.jpg",
       width: 1420,
       height: 1416,
       alt: "Anatolii Tupkalo, UX/UI and Product Designer",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: portfolioTitle,
     description: portfolioDescription,
-    images: [{ url: "/img/me.jpg", alt: "Anatolii Tupkalo, UX/UI and Product Designer" }],
+    images: [{ url: "https://portfolio-fawn-beta-44.vercel.app/img/me.jpg", alt: "Anatolii Tupkalo, UX/UI and Product Designer" }],
   },
 };
 
