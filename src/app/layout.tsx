@@ -34,9 +34,34 @@ const robotoCondensed = Roboto_Condensed({
   display: "swap",
 });
 
+const portfolioTitle = "Anatolii Tupkalo | UX/UI & Product Designer";
+const portfolioDescription = "Explore Anatolii Tupkalo's UX/UI and product design portfolio, featuring intuitive digital experiences for EdTech, FinTech, SaaS, and enterprise platforms.";
+
 export const metadata: Metadata = {
-  title: "My Portfolio",
-  description: "My work, experience, background, and skills in one place.",
+  metadataBase: new URL("https://www.tolidenver.com"),
+  title: portfolioTitle,
+  description: portfolioDescription,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "/",
+    siteName: "Anatolii Tupkalo Portfolio",
+    title: portfolioTitle,
+    description: portfolioDescription,
+    images: [{
+      url: "/img/me.jpg",
+      width: 1420,
+      height: 1416,
+      alt: "Anatolii Tupkalo, UX/UI and Product Designer",
+    }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: portfolioTitle,
+    description: portfolioDescription,
+    images: [{ url: "/img/me.jpg", alt: "Anatolii Tupkalo, UX/UI and Product Designer" }],
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
